@@ -1,0 +1,67 @@
+-----------------------------------------------------------------------------
+varibale -> variable is not rerender the compoennt  and update not possible
+state->  state is rerender the component update is possible
+-----------------------------------------------------------------------------
+rerender means execute again once the code
+-----------------------------------------------------------------------------
+and change the changes
+-----------------------------------------------------------------------------
+navigation in btn
+and linking in link href like about  
+-------------------------------------Routing----------------------------------------
+we dont have to give to with Link
+routing have some changes 
+
+"use client";
+
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <>
+      <h1>Routing in Next js</h1>
+      <ul>
+        <li>
+          <Link href="/">home</Link>
+        </li>
+        <li>
+          <Link href="/register">register</Link>
+        </li>
+        <li>
+          <Link href="/login">login</Link>
+        </li>
+        <li>
+          <Link href="/about">about</Link>
+        </li>
+      </ul>
+    </>
+  );
+}
+
+--------------------------------nested routing---------------------------------------------
+"use client";
+import { useRouter } from "next/navigation";
+export default function Login() {
+  const router = useRouter();
+  const navigateToOne = (e) => {
+    router.push("/login/" + e);
+  };
+  return (
+    <>
+      <h5>Login Page</h5>
+      <button onClick={() => navigateToOne("admin")}>admin register</button>
+      <br></br>
+      <button onClick={() => navigateToOne("user")}> user register</button>
+    </>
+  );
+}
+
+-----------------------------------------------------------------------------
+
+
+
+
+
+
+
+
